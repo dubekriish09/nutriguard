@@ -24,11 +24,38 @@ from sqlalchemy.orm import Session
 async def chat_food(request: ChatRequest, db_session: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     try:
         try:
+            from core.config import settings
+            if not settings.GEMINI_API_KEY:
+                raise ValueError("No API key — using keyword fallback")
             parser = FoodParser()
             intent_res = parser.parse(request.message)
-        except Exception as e:
-            return {"clarification_required": True, "question": "I'm currently unable to process language (AI_UNAVAILABLE). Please try again later."}
-        
+        except Exception:
+            # Keyword-based fallback parser (entity extraction only — no medical decisions)
+            from ai.food_parser import FoodQueryIntent
+            msg_lower = request.message.lower()
+            # Extract food names by matching against DB
+            all_foods = db_session.query(Food).all()
+            found_foods = []
+            for f in all_foods:
+                check_names = [f.name.lower()] + [a.lower() for a in (f.aliases or [])]
+                if any(n in msg_lower for n in check_names):
+                    found_foods.append(f.name.lower())
+            intent_str = "food_evaluation"
+            if "what" in msg_lower and ("can i eat" in msg_lower or "vegetable" in msg_lower or "food" in msg_lower):
+                intent_str = "food_list"
+            elif "alternative" in msg_lower or "instead" in msg_lower or "substitute" in msg_lower:
+                intent_str = "food_alternatives"
+            intent_res = FoodQueryIntent(
+                intent=intent_str,
+                foods=found_foods,
+                requested_category=None,
+                requested_action="eat",
+                comparison_food=None,
+                uncertain_entities=[]
+            )
+            # Mark as fallback in response metadata (no medical implication)
+            request._nlp_provider = "keyword_fallback"
+
         # 2. Check for clarification
         if intent_res.uncertain_entities:
             return {
@@ -61,6 +88,7 @@ async def chat_food(request: ChatRequest, db_session: Session = Depends(get_db),
             
             return {
                 "intent": "food_evaluation",
+                "nlp_provider": getattr(request, "_nlp_provider", "gemini"),
                 "deterministic_result": res,
                 "explanation": explanation,
                 "clarification_required": False
