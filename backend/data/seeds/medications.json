@@ -1,0 +1,83 @@
+[
+  {
+    "generic_name": "Metformin",
+    "brand_names": ["Glucophage", "Glycomet"],
+    "drug_class": "biguanide",
+    "indications": ["Type 2 Diabetes", "PCOS"],
+    "dosage_forms": ["tablet"],
+    "route": ["oral"],
+    "standard_timing": "with food",
+    "timing_category": "with_food",
+    "contraindications": ["severe_renal_impairment", "metabolic_acidosis"],
+    "warnings": ["lactic acidosis", "vitamin b12 deficiency"],
+    "interactions": [
+      {
+        "interaction_type": "beverage",
+        "food_component": "alcohol",
+        "severity": "major",
+        "mechanism": "Increases risk of lactic acidosis.",
+        "effect": "lactic_acidosis",
+        "recommendation": "Avoid excessive alcohol consumption."
+      }
+    ],
+    "depletions": [
+      {
+        "nutrient": "vitamin_b12",
+        "severity": "moderate",
+        "recommendation": "Monitor B12 levels annually. Supplement if deficient."
+      }
+    ]
+  },
+  {
+    "generic_name": "Warfarin",
+    "brand_names": ["Coumadin", "Jantoven"],
+    "drug_class": "anticoagulant",
+    "indications": ["Atrial fibrillation", "DVT", "Pulmonary embolism"],
+    "standard_timing": "same time daily",
+    "interactions": [
+      {
+        "interaction_type": "nutrient",
+        "nutrient": "vitamin_k",
+        "severity": "critical",
+        "direction": "food_affects_drug",
+        "mechanism": "Vitamin K antagonizes the anticoagulant effect of warfarin.",
+        "effect": "decreased INR",
+        "recommendation": "Maintain consistent intake of Vitamin K-rich foods. Do not suddenly increase or decrease intake.",
+        "quantity_threshold": "sudden changes"
+      },
+      {
+        "interaction_type": "food",
+        "food_category": "cranberry",
+        "severity": "major",
+        "mechanism": "Cranberry may increase the effects of warfarin.",
+        "recommendation": "Avoid large amounts of cranberry juice."
+      }
+    ]
+  },
+  {
+    "generic_name": "Levothyroxine",
+    "brand_names": ["Synthroid", "Thyronorm"],
+    "drug_class": "thyroid_hormone",
+    "indications": ["Hypothyroidism"],
+    "timing_category": "empty_stomach",
+    "standard_timing": "30-60 min before breakfast",
+    "interactions": [
+      {
+        "interaction_type": "nutrient",
+        "nutrient": "calcium",
+        "severity": "major",
+        "mechanism": "Calcium significantly decreases absorption of levothyroxine.",
+        "timing_window": "separate by at least 4 hours",
+        "recommendation": "Take at least 4 hours apart from calcium supplements or high-calcium meals."
+      },
+      {
+        "interaction_type": "nutrient",
+        "nutrient": "iron",
+        "severity": "major",
+        "mechanism": "Iron decreases absorption of levothyroxine.",
+        "timing_window": "separate by at least 4 hours",
+        "recommendation": "Take at least 4 hours apart from iron supplements."
+      }
+    ]
+  }
+]

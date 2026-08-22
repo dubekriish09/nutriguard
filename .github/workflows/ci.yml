@@ -1,0 +1,67 @@
+name: NutriGuard CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: nutriguard
+          POSTGRES_PASSWORD: nutriguard_password
+          POSTGRES_DB: nutriguard_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DATABASE_URL: postgresql://nutriguard:nutriguard_password@localhost:5432/nutriguard_test
+      GEMINI_API_KEY: "mock_api_key"
+      JWT_SECRET: "mock_jwt_secret"
+      ENVIRONMENT: test
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+        
+    - name: Install dependencies
+      run: |
+        cd backend
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Run Alembic Upgrade Head
+      run: |
+        cd backend
+        python -m alembic upgrade head
+        
+    - name: Run Alembic Downgrade Base (Validation)
+      run: |
+        cd backend
+        python -m alembic downgrade base
+        python -m alembic upgrade head
+        
+    - name: Run Seed Data
+      run: |
+        cd backend
+        python -m data.seed
+        
+    - name: Run Pytest
+      run: |
+        cd backend
+        pytest tests/ -v

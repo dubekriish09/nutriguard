@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Spinach",
+    "aliases": ["Palak", "Spinacia oleracea"],
+    "category": "vegetable",
+    "subcategory": "leafy_vegetable",
+    "cuisine_origin": ["pan_indian", "global"],
+    "description": "Leafy green vegetable, rich in iron, calcium, and vitamins, but high in oxalates and potassium.",
+    "is_raw": true,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {"name": "potassium", "amount": 558, "unit": "mg"},
+      {"name": "calcium", "amount": 99, "unit": "mg"},
+      {"name": "iron", "amount": 2.7, "unit": "mg"},
+      {"name": "oxalate", "amount": 970, "unit": "mg"},
+      {"name": "vitamin_k", "amount": 483, "unit": "mcg"}
+    ],
+    "allergens": []
+  },
+  {
+    "name": "Banana",
+    "aliases": ["Kela"],
+    "category": "fruit",
+    "cuisine_origin": ["global", "pan_indian"],
+    "description": "Common fruit, high in potassium and carbohydrates.",
+    "is_raw": true,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {"name": "potassium", "amount": 358, "unit": "mg"},
+      {"name": "carbohydrates", "amount": 22.8, "unit": "g"}
+    ],
+    "allergens": []
+  },
+  {
+    "name": "Whole Wheat Roti",
+    "aliases": ["Chapati", "Phulka"],
+    "category": "grain",
+    "cuisine_origin": ["north_indian", "pan_indian"],
+    "description": "Unleavened flatbread made from whole wheat flour.",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_gluten_free": false,
+    "is_lactose_free": true,
+    "nutrients": [
+      {"name": "carbohydrates", "amount": 46.4, "unit": "g"},
+      {"name": "protein", "amount": 6.9, "unit": "g"},
+      {"name": "fiber", "amount": 6.8, "unit": "g"}
+    ],
+    "allergens": ["gluten"]
+  },
+  {
+    "name": "Peanuts",
+    "aliases": ["Moongphali", "Groundnuts"],
+    "category": "snack",
+    "subcategory": "nuts_seeds",
+    "cuisine_origin": ["pan_indian"],
+    "description": "Legume commonly consumed as a snack or in recipes.",
+    "is_raw": true,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {"name": "protein", "amount": 25.8, "unit": "g"},
+      {"name": "fat", "amount": 49.2, "unit": "g"}
+    ],
+    "allergens": ["peanut"]
+  }
+]

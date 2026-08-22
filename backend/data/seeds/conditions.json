@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Chronic Kidney Disease",
+    "aliases": [
+      "CKD",
+      "Renal failure"
+    ],
+    "category": "renal",
+    "description": "Progressive loss of kidney function.",
+    "parameters": [
+      "stage",
+      "egfr",
+      "serum_potassium"
+    ],
+    "nutrition_rules": [
+      {
+        "nutrient": "potassium",
+        "action": "limit",
+        "priority": 4,
+        "is_conditional": true,
+        "condition_parameter": "stage",
+        "condition_operator": ">=",
+        "condition_value": "4",
+        "rationale": "High risk of hyperkalemia in late-stage CKD."
+      },
+      {
+        "nutrient": "sodium",
+        "action": "limit",
+        "priority": 5,
+        "threshold_amount": 2000,
+        "threshold_unit": "mg",
+        "rationale": "Sodium restriction helps manage blood pressure and fluid retention in CKD."
+      }
+    ]
+  },
+  {
+    "name": "Hypertension",
+    "aliases": [
+      "High blood pressure",
+      "HTN"
+    ],
+    "category": "cardiovascular",
+    "nutrition_rules": [
+      {
+        "nutrient": "sodium",
+        "action": "limit",
+        "priority": 6,
+        "threshold_amount": 1500,
+        "threshold_unit": "mg",
+        "rationale": "Sodium restriction is the primary dietary intervention for blood pressure control."
+      },
+      {
+        "nutrient": "potassium",
+        "action": "encourage",
+        "priority": 7,
+        "rationale": "Adequate potassium intake helps lower blood pressure, unless contraindicated by renal impairment or medications."
+      }
+    ]
+  },
+  {
+    "name": "Type 2 Diabetes",
+    "aliases": [
+      "diabetes",
+      "T2DM"
+    ],
+    "category": "metabolic",
+    "nutrition_rules": []
+  }
+]
