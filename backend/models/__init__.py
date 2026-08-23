@@ -6,3 +6,4 @@ from .condition import Condition, ConditionNutritionRule
 from .rule import Rule, RuleTrigger, RuleTarget, RuleEvaluation
 from .evidence import DataSource, Evidence, RuleEvidence
 from .audit import AuditLog
+from .meal_plan import MealPlan, MealPlanMeal

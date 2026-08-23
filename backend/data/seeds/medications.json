@@ -1,83 +1,118 @@
 [
   {
-    "generic_name": "Metformin",
-    "brand_names": ["Glucophage", "Glycomet"],
-    "drug_class": "biguanide",
-    "indications": ["Type 2 Diabetes", "PCOS"],
-    "dosage_forms": ["tablet"],
-    "route": ["oral"],
-    "standard_timing": "with food",
-    "timing_category": "with_food",
-    "contraindications": ["severe_renal_impairment", "metabolic_acidosis"],
-    "warnings": ["lactic acidosis", "vitamin b12 deficiency"],
-    "interactions": [
-      {
-        "interaction_type": "beverage",
-        "food_component": "alcohol",
-        "severity": "major",
-        "mechanism": "Increases risk of lactic acidosis.",
-        "effect": "lactic_acidosis",
-        "recommendation": "Avoid excessive alcohol consumption."
-      }
-    ],
+    "generic_name": "metformin",
+    "drug_class": "Unknown",
+    "standard_timing": "with_food",
+    "interactions": [],
     "depletions": [
-      {
-        "nutrient": "vitamin_b12",
-        "severity": "moderate",
-        "recommendation": "Monitor B12 levels annually. Supplement if deficient."
-      }
+      "vitamin_b12"
     ]
   },
   {
-    "generic_name": "Warfarin",
-    "brand_names": ["Coumadin", "Jantoven"],
-    "drug_class": "anticoagulant",
-    "indications": ["Atrial fibrillation", "DVT", "Pulmonary embolism"],
-    "standard_timing": "same time daily",
+    "generic_name": "statins",
+    "drug_class": "Unknown",
+    "standard_timing": "evening",
+    "interactions": [],
+    "depletions": [
+      "coq10"
+    ]
+  },
+  {
+    "generic_name": "ace_inhibitors",
+    "drug_class": "Unknown",
+    "standard_timing": "any",
+    "interactions": [],
+    "depletions": [
+      "zinc"
+    ]
+  },
+  {
+    "generic_name": "thiazide_diuretics",
+    "drug_class": "Unknown",
+    "standard_timing": "any",
+    "interactions": [],
+    "depletions": [
+      "potassium",
+      "magnesium",
+      "zinc"
+    ]
+  },
+  {
+    "generic_name": "pantoprazole",
+    "drug_class": "Unknown",
+    "standard_timing": "empty_stomach",
+    "interactions": [],
+    "depletions": [
+      "vitamin_b12",
+      "calcium",
+      "magnesium",
+      "iron"
+    ]
+  },
+  {
+    "generic_name": "warfarin",
+    "drug_class": "Unknown",
+    "standard_timing": "any",
     "interactions": [
       {
-        "interaction_type": "nutrient",
-        "nutrient": "vitamin_k",
-        "severity": "critical",
-        "direction": "food_affects_drug",
-        "mechanism": "Vitamin K antagonizes the anticoagulant effect of warfarin.",
-        "effect": "decreased INR",
-        "recommendation": "Maintain consistent intake of Vitamin K-rich foods. Do not suddenly increase or decrease intake.",
-        "quantity_threshold": "sudden changes"
+        "interaction_type": "food",
+        "food_category": "vitamin_k_rich",
+        "severity": "high",
+        "mechanism": "Vitamin K antagonizes warfarin.",
+        "recommendation": "Vitamin K antagonizes warfarin."
+      }
+    ],
+    "depletions": []
+  },
+  {
+    "generic_name": "levothyroxine",
+    "drug_class": "Unknown",
+    "standard_timing": "empty_stomach",
+    "interactions": [
+      {
+        "interaction_type": "food",
+        "food_category": "calcium_rich",
+        "severity": "high",
+        "mechanism": "Calcium inhibits absorption.",
+        "recommendation": "Calcium inhibits absorption."
       },
       {
         "interaction_type": "food",
-        "food_category": "cranberry",
-        "severity": "major",
-        "mechanism": "Cranberry may increase the effects of warfarin.",
-        "recommendation": "Avoid large amounts of cranberry juice."
-      }
-    ]
-  },
-  {
-    "generic_name": "Levothyroxine",
-    "brand_names": ["Synthroid", "Thyronorm"],
-    "drug_class": "thyroid_hormone",
-    "indications": ["Hypothyroidism"],
-    "timing_category": "empty_stomach",
-    "standard_timing": "30-60 min before breakfast",
-    "interactions": [
-      {
-        "interaction_type": "nutrient",
-        "nutrient": "calcium",
-        "severity": "major",
-        "mechanism": "Calcium significantly decreases absorption of levothyroxine.",
-        "timing_window": "separate by at least 4 hours",
-        "recommendation": "Take at least 4 hours apart from calcium supplements or high-calcium meals."
+        "food_category": "iron_rich",
+        "severity": "high",
+        "mechanism": "Iron inhibits absorption.",
+        "recommendation": "Iron inhibits absorption."
       },
       {
-        "interaction_type": "nutrient",
-        "nutrient": "iron",
-        "severity": "major",
-        "mechanism": "Iron decreases absorption of levothyroxine.",
-        "timing_window": "separate by at least 4 hours",
-        "recommendation": "Take at least 4 hours apart from iron supplements."
+        "interaction_type": "food",
+        "food_category": "cruciferous_raw",
+        "severity": "medium",
+        "mechanism": "Goitrogens inhibit thyroid function.",
+        "recommendation": "Goitrogens inhibit thyroid function."
       }
-    ]
+    ],
+    "depletions": []
+  },
+  {
+    "generic_name": "ferrous_sulfate",
+    "drug_class": "Unknown",
+    "standard_timing": "empty_stomach",
+    "interactions": [
+      {
+        "interaction_type": "food",
+        "food_category": "tea_coffee",
+        "severity": "high",
+        "mechanism": "Tannins inhibit iron absorption.",
+        "recommendation": "Tannins inhibit iron absorption."
+      },
+      {
+        "interaction_type": "food",
+        "food_category": "dairy",
+        "severity": "high",
+        "mechanism": "Calcium inhibits iron absorption.",
+        "recommendation": "Calcium inhibits iron absorption."
+      }
+    ],
+    "depletions": []
   }
 ]

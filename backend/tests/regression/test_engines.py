@@ -9,9 +9,9 @@ from engines.safety_engine import SafetyEngine
 # TEST CASE 1: Allergy (Safety Engine veto)
 @pytest.mark.asyncio
 async def test_allergy_veto_peanut(db_session):
-    food = db_session.query(Food).filter_by(name="Peanuts").first()
+    food = db_session.query(Food).filter_by(name="Whole Milk").first()
     user_context = {
-        "allergies": ["peanut"],
+        "allergies": ["dairy"],
         "conditions": [],
         "medications": []
     }
@@ -26,9 +26,9 @@ async def test_allergy_veto_peanut(db_session):
 # TEST CASE 2: Allergy overrides scoring
 @pytest.mark.asyncio
 async def test_allergy_overrides_scoring(db_session):
-    food = db_session.query(Food).filter_by(name="Peanuts").first()
+    food = db_session.query(Food).filter_by(name="Whole Milk").first()
     # Mocking score is implicitly handled since safety veto prevents scoring engine from even running
-    user_context = {"allergies": ["peanut"]}
+    user_context = {"allergies": ["dairy"]}
     
     service = RecommendationService(db_session)
     result = await service.generate_recommendations(user_context, [food.food_id])
@@ -41,11 +41,11 @@ async def test_allergy_overrides_scoring(db_session):
 @pytest.mark.asyncio
 async def test_warfarin_vitamin_k_interaction(db_session):
     # Spinach has high Vitamin K
-    food = db_session.query(Food).filter_by(name="Spinach").first()
-    med = db_session.query(Medication).filter_by(generic_name="Warfarin").first()
+    food = db_session.query(Food).filter_by(name="Palak").first()
+    med = db_session.query(Medication).filter_by(generic_name="warfarin").first()
     
     user_context = {
-        "medications": [{"generic_name": "Warfarin"}]
+        "medications": [{"generic_name": "warfarin"}]
     }
     
     service = RecommendationService(db_session)
@@ -70,7 +70,7 @@ async def test_ckd_potassium_threshold(db_session):
     
     # 1. Stage < 4 (rule should not activate)
     ctx_stage_3 = {
-        "conditions": [{"name": "Chronic Kidney Disease", "parameters": {"stage": 3}}]
+        "conditions": [{"name": "ckd", "parameters": {"stage": 3}}]
     }
     service = RecommendationService(db_session)
     res_stage_3 = (await service.generate_recommendations(ctx_stage_3, [food.food_id]))['foods'][0]
@@ -78,7 +78,7 @@ async def test_ckd_potassium_threshold(db_session):
     
     # 2. Stage >= 4 (rule SHOULD activate)
     ctx_stage_4 = {
-        "conditions": [{"name": "Chronic Kidney Disease", "parameters": {"stage": 4}}]
+        "conditions": [{"name": "ckd", "parameters": {"stage": 4}}]
     }
     res_stage_4 = (await service.generate_recommendations(ctx_stage_4, [food.food_id]))['foods'][0]
     assert res_stage_4['classification'] == 'limit', f"Expected limit, got {res_stage_4['classification']}. Rules: {res_stage_4['fired_rules']}"
@@ -99,10 +99,10 @@ def test_ai_guardrails(db_session):
 @pytest.mark.asyncio
 async def test_hypertension_sodium(db_session):
     # Mocking a high sodium food since our seed might not have one explicitly
-    food = db_session.query(Food).filter_by(name="Whole Wheat Roti").first()
+    food = db_session.query(Food).filter_by(name="Wheat Roti").first()
     
     ctx = {
-        "conditions": [{"name": "Hypertension"}]
+        "conditions": [{"name": "hypertension"}]
     }
     service = RecommendationService(db_session)
     res = (await service.generate_recommendations(ctx, [food.food_id]))['foods'][0]

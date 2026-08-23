@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean, Numeric, ForeignKey, DateTime, JSON, Date
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
 from .base import Base
 import uuid
 
@@ -8,7 +9,7 @@ class Medication(Base):
     __tablename__ = 'medications'
     
     medication_id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    generic_name = Column(String, nullable=False)
+    generic_name = Column(String, unique=True, nullable=False)
     brand_names = Column(JSON)
     drug_class = Column(String, nullable=False)
     drug_subclass = Column(String)
@@ -34,6 +35,8 @@ class Medication(Base):
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime(timezone=True), default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), default=func.now(), onupdate=func.now(), nullable=False)
+
+    depletions = relationship("DrugNutrientDepletion", back_populates="medication", lazy="joined")
 
 class DrugFoodInteraction(Base):
     __tablename__ = 'drug_food_interactions'
@@ -83,3 +86,6 @@ class DrugNutrientDepletion(Base):
     evidence_level = Column(String)
     source_id = Column(UUID(as_uuid=True))
     last_review_date = Column(Date)
+
+    medication = relationship("Medication", back_populates="depletions")
+    nutrient = relationship("Nutrient", lazy="joined")

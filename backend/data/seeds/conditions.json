@@ -1,69 +1,213 @@
 [
   {
-    "name": "Chronic Kidney Disease",
-    "aliases": [
-      "CKD",
-      "Renal failure"
-    ],
-    "category": "renal",
-    "description": "Progressive loss of kidney function.",
-    "parameters": [
-      "stage",
-      "egfr",
-      "serum_potassium"
-    ],
+    "name": "type_2_diabetes",
+    "category": "Medical",
+    "parameters": [],
     "nutrition_rules": [
       {
-        "nutrient": "potassium",
-        "action": "limit",
-        "priority": 4,
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "sugar_g",
+        "rationale": "Restrict sugar_g for type_2_diabetes"
+      },
+      {
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "refined_carbs_g",
+        "rationale": "Restrict refined_carbs_g for type_2_diabetes"
+      },
+      {
+        "action": "ENCOURAGE",
+        "priority": "MEDIUM",
+        "nutrient": "fiber_g",
+        "rationale": "Encourage fiber_g for type_2_diabetes"
+      },
+      {
+        "action": "ENCOURAGE",
+        "priority": "MEDIUM",
+        "nutrient": "protein_g",
+        "rationale": "Encourage protein_g for type_2_diabetes"
+      }
+    ]
+  },
+  {
+    "name": "hypertension",
+    "category": "Medical",
+    "parameters": [],
+    "nutrition_rules": [
+      {
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "sodium_mg",
+        "rationale": "Restrict sodium_mg for hypertension"
+      },
+      {
+        "action": "ENCOURAGE",
+        "priority": "MEDIUM",
+        "nutrient": "potassium_mg",
+        "rationale": "Encourage potassium_mg for hypertension"
+      },
+      {
+        "action": "ENCOURAGE",
+        "priority": "MEDIUM",
+        "nutrient": "magnesium_mg",
+        "rationale": "Encourage magnesium_mg for hypertension"
+      }
+    ]
+  },
+  {
+    "name": "iron_def_anemia",
+    "category": "Medical",
+    "parameters": [],
+    "nutrition_rules": [
+      {
+        "action": "ENCOURAGE",
+        "priority": "MEDIUM",
+        "nutrient": "iron_mg",
+        "rationale": "Encourage iron_mg for iron_def_anemia"
+      },
+      {
+        "action": "ENCOURAGE",
+        "priority": "MEDIUM",
+        "nutrient": "vitamin_c_mg",
+        "rationale": "Encourage vitamin_c_mg for iron_def_anemia"
+      }
+    ]
+  },
+  {
+    "name": "osteoporosis",
+    "category": "Medical",
+    "parameters": [],
+    "nutrition_rules": [
+      {
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "caffeine_mg",
+        "rationale": "Restrict caffeine_mg for osteoporosis"
+      },
+      {
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "alcohol_g",
+        "rationale": "Restrict alcohol_g for osteoporosis"
+      },
+      {
+        "action": "ENCOURAGE",
+        "priority": "MEDIUM",
+        "nutrient": "calcium_mg",
+        "rationale": "Encourage calcium_mg for osteoporosis"
+      },
+      {
+        "action": "ENCOURAGE",
+        "priority": "MEDIUM",
+        "nutrient": "vitamin_d_mcg",
+        "rationale": "Encourage vitamin_d_mcg for osteoporosis"
+      }
+    ]
+  },
+  {
+    "name": "hypothyroidism",
+    "category": "Medical",
+    "parameters": [],
+    "nutrition_rules": []
+  },
+  {
+    "name": "gout",
+    "category": "Medical",
+    "parameters": [],
+    "nutrition_rules": [
+      {
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "purines_mg",
+        "rationale": "Restrict purines_mg for gout"
+      },
+      {
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "alcohol_g",
+        "rationale": "Restrict alcohol_g for gout"
+      },
+      {
+        "action": "ENCOURAGE",
+        "priority": "MEDIUM",
+        "nutrient": "water_ml",
+        "rationale": "Encourage water_ml for gout"
+      }
+    ]
+  },
+  {
+    "name": "ckd",
+    "category": "Medical",
+    "parameters": [],
+    "nutrition_rules": [
+      {
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "potassium_mg",
         "is_conditional": true,
-        "condition_parameter": "stage",
-        "condition_operator": ">=",
-        "condition_value": "4",
-        "rationale": "High risk of hyperkalemia in late-stage CKD."
+        "condition_parameter": "eGFR",
+        "condition_operator": "<",
+        "condition_value": "30",
+        "rationale": "Conditional restrict potassium_mg if eGFR < 30"
       },
       {
-        "nutrient": "sodium",
-        "action": "limit",
-        "priority": 5,
-        "threshold_amount": 2000,
-        "threshold_unit": "mg",
-        "rationale": "Sodium restriction helps manage blood pressure and fluid retention in CKD."
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "phosphorus_mg",
+        "is_conditional": true,
+        "condition_parameter": "eGFR",
+        "condition_operator": "<",
+        "condition_value": "30",
+        "rationale": "Conditional restrict phosphorus_mg if eGFR < 30"
+      },
+      {
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "protein_g",
+        "is_conditional": true,
+        "condition_parameter": "eGFR",
+        "condition_operator": "<",
+        "condition_value": "60",
+        "rationale": "Conditional restrict protein_g if eGFR < 60"
       }
     ]
   },
   {
-    "name": "Hypertension",
-    "aliases": [
-      "High blood pressure",
-      "HTN"
-    ],
-    "category": "cardiovascular",
+    "name": "hyperlipidemia",
+    "category": "Medical",
+    "parameters": [],
     "nutrition_rules": [
       {
-        "nutrient": "sodium",
-        "action": "limit",
-        "priority": 6,
-        "threshold_amount": 1500,
-        "threshold_unit": "mg",
-        "rationale": "Sodium restriction is the primary dietary intervention for blood pressure control."
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "saturated_fat_g",
+        "rationale": "Restrict saturated_fat_g for hyperlipidemia"
       },
       {
-        "nutrient": "potassium",
-        "action": "encourage",
-        "priority": 7,
-        "rationale": "Adequate potassium intake helps lower blood pressure, unless contraindicated by renal impairment or medications."
+        "action": "RESTRICT",
+        "priority": "HIGH",
+        "nutrient": "trans_fat_g",
+        "rationale": "Restrict trans_fat_g for hyperlipidemia"
+      },
+      {
+        "action": "ENCOURAGE",
+        "priority": "MEDIUM",
+        "nutrient": "fiber_g",
+        "rationale": "Encourage fiber_g for hyperlipidemia"
+      },
+      {
+        "action": "ENCOURAGE",
+        "priority": "MEDIUM",
+        "nutrient": "omega_3_mg",
+        "rationale": "Encourage omega_3_mg for hyperlipidemia"
       }
     ]
   },
   {
-    "name": "Type 2 Diabetes",
-    "aliases": [
-      "diabetes",
-      "T2DM"
-    ],
-    "category": "metabolic",
+    "name": "gerd",
+    "category": "Medical",
+    "parameters": [],
     "nutrition_rules": []
   }
 ]

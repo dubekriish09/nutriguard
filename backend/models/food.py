@@ -35,6 +35,11 @@ class Food(Base):
     is_gluten_free = Column(Boolean)
     is_lactose_free = Column(Boolean)
     
+    glycemic_index = Column(Integer, nullable=True)
+    purine_level = Column(String, nullable=True)
+    vitamin_k_mcg = Column(Numeric, nullable=True)
+    nutrient_source = Column(String, nullable=True)
+    
     source_id = Column(UUID(as_uuid=True)) # references data_sources
     source_food_id = Column(String)
     evidence_level = Column(String)

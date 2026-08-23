@@ -1,81 +1,30 @@
-from dataclasses import dataclass
-from typing import List, Dict, Any
-from uuid import UUID
-
-@dataclass
-class InteractionResult:
-    food_id: UUID
-    has_interactions: bool
-    interactions: List[Dict[str, Any]]
-    
-    @property
-    def max_severity(self) -> str:
-        if not self.interactions:
-            return 'none'
-        severities = [i.get('severity', 'minor') for i in self.interactions]
-        for s in ['critical', 'major', 'moderate', 'minor', 'informational']:
-            if s in severities:
-                return s
-        return 'none'
+from api.schemas.engine_schemas import UserProfileSchema, FoodSchema
+from typing import Dict, Any, List
 
 class InteractionEngine:
     def __init__(self, db_session):
         self.db = db_session
 
-    def evaluate(self, user_context: dict, food_id: UUID) -> InteractionResult:
-        if not self.db:
-            return InteractionResult(food_id=food_id, has_interactions=False, interactions=[])
-            
-        user_meds = user_context.get('medications', [])
+    def evaluate(self, user_context: UserProfileSchema, food: FoodSchema) -> Dict[str, Any]:
         interactions = []
-        
-        from models.medication import DrugFoodInteraction, Medication
-        from models.food import Food, FoodNutrition, Nutrient
-        
-        food = self.db.query(Food).filter(Food.food_id == food_id).first()
-        if not food:
-            return InteractionResult(food_id=food_id, has_interactions=False, interactions=[])
-            
-        # Get nutrients for this food
-        food_nutrients = self.db.query(Nutrient.name).join(FoodNutrition).filter(FoodNutrition.food_id == food_id).all()
-        food_nutrient_names = [n[0].lower() for n in food_nutrients]
-        
-        for med_dict in user_meds:
-            med_generic = med_dict.get('generic_name', '').lower()
-            if not med_generic:
-                continue
-                
-            med = self.db.query(Medication).filter(Medication.generic_name.ilike(f"%{med_generic}%")).first()
-            if not med:
-                continue
-                
-            db_interactions = self.db.query(DrugFoodInteraction).filter(DrugFoodInteraction.medication_id == med.medication_id).all()
-            
-            for inter in db_interactions:
-                match = False
-                if inter.interaction_type == 'food' and inter.food_category and inter.food_category.lower() in food.name.lower():
-                    match = True
-                elif inter.interaction_type == 'nutrient' and inter.food_component:
-                    if inter.food_component.lower() in food_nutrient_names:
-                        match = True
-                elif inter.interaction_type == 'beverage' and inter.food_component:
-                    # In MVP, treat alcohol check broadly or just check aliases
-                    if inter.food_component.lower() in food.name.lower():
-                        match = True
-                        
-                if match:
+        max_severity = 'none'
+
+        severity_rank = {'none': 0, 'low': 1, 'moderate': 2, 'major': 3, 'critical': 4, 'high': 4}
+
+        for med in user_context.medications:
+            for interaction in med.food_interactions:
+                if interaction.interacting_food_category in food.dietary_tags:
+                    sev = interaction.severity.lower()
                     interactions.append({
-                        "medication_id": str(med.medication_id),
-                        "medication_name": med.generic_name,
-                        "interaction_type": inter.interaction_type,
-                        "severity": inter.severity,
-                        "mechanism": inter.mechanism,
-                        "recommendation": inter.recommendation,
-                        "timing_window": inter.timing_window
+                        'medication': med.name,
+                        'mechanism': interaction.description,
+                        'severity': sev,
+                        'recommendation': interaction.description
                     })
-                    
-        return InteractionResult(
-            food_id=food_id,
-            has_interactions=len(interactions) > 0,
-            interactions=interactions
-        )
+                    if severity_rank.get(sev, 0) > severity_rank.get(max_severity, 0):
+                        max_severity = sev
+
+        return {
+            'interactions': interactions,
+            'max_severity': max_severity
+        }

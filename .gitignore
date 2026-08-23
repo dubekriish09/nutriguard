@@ -25,7 +25,26 @@ build/
 
 # OS
 .DS_Store
-Thumbs.db
+Thumbbs.db
 
 # Logs
 *.log
+
+# Node / Frontend build
+frontend/node_modules/
+backend/frontend/
+frontend/dist/
+
+# Migration/patch scripts (dev artifacts — not part of the codebase)
+backend/fix*.py
+backend/update_*.py
+backend/patch_*.py
+backend/debug.py
+backend/add_map.py
+backend/find_allergen.py
+backend/audit_db.py
+backend/generate_frontend.py
+backend/revert.py
+backend/rebuild*.py
+backend/rewrite*.py
+backend/migrate_engines.py

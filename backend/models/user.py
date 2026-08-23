@@ -15,6 +15,9 @@ class User(Base):
     role = Column(String, default='USER', nullable=False)
     created_at = Column(DateTime(timezone=True), default=func.now(), nullable=False)
     updated_at = Column(DateTime(timezone=True), default=func.now(), onupdate=func.now(), nullable=False)
+    
+    from sqlalchemy.orm import relationship
+    meal_plans = relationship("MealPlan", back_populates="user", cascade="all, delete-orphan")
 
 class UserProfile(Base):
     __tablename__ = 'user_profiles'

@@ -53,3 +53,44 @@ Please explain the following deterministic result for {food_name}:
             return resp.explanation
         except Exception:
             return f"Deterministic classification: {classification}. (Explanation generation failed)."
+
+import json
+from api.schemas.meal_schemas import DayPlanResponse
+
+async def explain_meal_plan(plan: DayPlanResponse) -> str:
+    llm_context = {
+        "profile_summary": plan.profile_summary,
+        "meals": {
+            meal_type: {
+                "foods": [
+                    f"{f.serving_description} {f.food_name}"
+                    for f in meal.foods
+                ],
+                "rationale": meal.rationale
+            }
+            for meal_type, meal in plan.meals.items()
+        },
+        "medication_timing": [
+            {
+                "medication": t.medication_name,
+                "instruction": t.instruction,
+                "warnings": t.warnings
+            }
+            for t in plan.medication_timing
+        ],
+        "gaps": {
+            "deficient": plan.nutrient_gaps.deficient,
+            "suggestions": [
+                s.note for s in plan.nutrient_gaps.suggestions
+            ],
+            "depletion_notes": plan.nutrient_gaps.medication_depletion_notes
+        },
+        "calculation_notes": plan.calculation_notes,
+        "safety_notes": plan.safety_notes,
+    }
+
+    try:
+        # mocked response
+        return "\n".join(plan.calculation_notes)
+    except Exception as e:
+        return "\n".join(plan.calculation_notes)

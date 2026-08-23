@@ -1,3 +1,30 @@
+import re
+
+MEAL_PLAN_INTENTS = [
+    "meal plan", "diet plan", "what should i eat",
+    "what to eat today", "plan my meals", "plan my diet",
+    "what can i eat", "give me a plan", "suggest meals",
+    "breakfast lunch dinner", "full day diet",
+    "daily meal", "weekly plan",
+]
+
+MEAL_PLAN_REGEX = re.compile(
+    r'\b(meal plan|diet plan|what (should|can) i eat|'
+    r'plan my (meals|diet)|daily (meal|diet)|'
+    r'breakfast.*lunch|what to eat)\b',
+    re.IGNORECASE
+)
+
+def extract_intent(user_message: str) -> str:
+    msg = user_message.lower().strip()
+    if any(phrase in msg for phrase in MEAL_PLAN_INTENTS):
+        return "meal_plan"
+    return "food_evaluation"
+
+def extract_intent_fallback(user_message: str) -> str:
+    if MEAL_PLAN_REGEX.search(user_message):
+        return "meal_plan"
+    return "food_evaluation"
 import os
 from pydantic import BaseModel, Field
 from typing import List, Optional, Literal

@@ -14,6 +14,9 @@ from models.medication import Medication, DrugFoodInteraction, DrugNutrientDeple
 from models.condition import Condition, ConditionNutritionRule
 from models.evidence import DataSource, Evidence, RuleEvidence
 
+def normalize_name(name: str) -> str:
+    return name.lower().strip().replace(' ', '_').replace('-', '_')
+
 def seed_users(db):
     users = [
         {"email": "admin@nutriguard.com", "role": "ADMIN", "display_name": "System Admin"},
@@ -52,8 +55,13 @@ def seed_foods(db, foods_data):
             is_raw=item.get('is_raw', True),
             is_vegetarian=item.get('is_vegetarian', True),
             is_vegan=item.get('is_vegan', False),
+            is_jain=item.get('is_jain', False),
             is_gluten_free=item.get('is_gluten_free', False),
             is_lactose_free=item.get('is_lactose_free', False),
+            glycemic_index=item.get('glycemic_index'),
+            purine_level=item.get('purine_level'),
+            vitamin_k_mcg=item.get('vitamin_k_mcg'),
+            nutrient_source=item.get('nutrient_source')
         )
         db.add(food)
         db.flush() # flush to get food_id generated
@@ -94,7 +102,7 @@ def seed_medications(db, meds_data):
             continue
             
         med = Medication(
-            generic_name=item['generic_name'],
+            generic_name=normalize_name(item['generic_name']),
             brand_names=item.get('brand_names', []),
             drug_class=item['drug_class'],
             indications=item.get('indications', []),
@@ -135,7 +143,7 @@ def seed_conditions(db, conditions_data):
             continue
             
         cond = Condition(
-            name=item['name'],
+            name=normalize_name(item['name']),
             aliases=item.get('aliases', []),
             category=item.get('category'),
             description=item.get('description'),
@@ -172,6 +180,109 @@ def seed_conditions(db, conditions_data):
             )
             db.add(cnr)
 
+
+def seed_drug_nutrient_depletions(db):
+    """Seed known drug-nutrient depletions. Idempotent."""
+    from models.medication import Medication, DrugNutrientDepletion
+    from models.food import Nutrient
+    
+    DEPLETIONS = [
+        # (generic_name, nutrient, severity, mechanism, recommendation)
+        ('metformin', 'vitamin_b12', 'significant',
+         'Reduces ileal absorption of B12 via calcium-dependent mechanism',
+         'Monitor B12 annually. Ensure dietary sources: curd, paneer, eggs if non-veg.'),
+        
+        ('atorvastatin', 'coq10', 'moderate',
+         'Statins inhibit mevalonate pathway, reducing endogenous CoQ10 synthesis',
+         'Include nuts, whole grains. Discuss CoQ10 monitoring if fatigue or myalgia occurs.'),
+        
+        ('rosuvastatin', 'coq10', 'moderate',
+         'Same mechanism as atorvastatin',
+         'Include nuts, whole grains. Discuss CoQ10 monitoring if fatigue or myalgia occurs.'),
+        
+        ('pantoprazole', 'vitamin_b12', 'moderate',
+         'Reduces gastric acid needed for B12 release from food proteins',
+         'Monitor B12 with long-term use. Include dairy or eggs if non-veg.'),
+        
+        ('pantoprazole', 'calcium', 'moderate',
+         'Reduces calcium absorption by decreasing gastric acid',
+         'Ensure adequate calcium intake: curd, ragi, sesame seeds.'),
+        
+        ('pantoprazole', 'magnesium', 'moderate',
+         'Long-term PPI use associated with hypomagnesaemia',
+         'Include nuts, seeds, whole grains.'),
+        
+        ('omeprazole', 'vitamin_b12', 'moderate',
+         'Same mechanism as pantoprazole',
+         'Monitor B12 with long-term use.'),
+        
+        ('omeprazole', 'calcium', 'moderate',
+         'Same mechanism as pantoprazole',
+         'Ensure adequate calcium intake.'),
+        
+        ('omeprazole', 'magnesium', 'moderate',
+         'Same mechanism as pantoprazole',
+         'Include nuts, seeds, whole grains.'),
+        
+        ('hydrochlorothiazide', 'potassium', 'significant',
+         'Increases renal potassium excretion',
+         'Include banana, curd, coconut water unless CKD Stage 4+ restricts potassium.'),
+        
+        ('hydrochlorothiazide', 'magnesium', 'moderate',
+         'Increases renal magnesium excretion',
+         'Include nuts, seeds, leafy greens.'),
+        
+        ('hydrochlorothiazide', 'zinc', 'minor',
+         'Increases renal zinc excretion',
+         'Include pumpkin seeds, sesame, whole dals.'),
+        
+        ('enalapril', 'zinc', 'minor',
+         'ACE inhibitors may increase urinary zinc loss',
+         'Include pumpkin seeds, sesame seeds, rajma.'),
+        
+        ('ramipril', 'zinc', 'minor',
+         'Same mechanism as enalapril',
+         'Include pumpkin seeds, sesame seeds, rajma.'),
+    ]
+    
+    for generic_name, nutrient_name, severity, mechanism, recommendation in DEPLETIONS:
+        med = db.query(Medication).filter(
+            Medication.generic_name == generic_name
+        ).first()
+        if not med:
+            print(f'  WARNING: medication not found for depletion: {generic_name}')
+            continue
+            
+        nutr = db.query(Nutrient).filter(
+            Nutrient.name.ilike(nutrient_name)
+        ).first()
+        if not nutr:
+            # Create dummy nutrient just for testing
+            nutr = Nutrient(name=nutrient_name, unit="mg", )
+            db.add(nutr)
+            db.commit()
+            db.refresh(nutr)
+        
+        # Idempotent check
+        existing = db.query(DrugNutrientDepletion).filter(
+            DrugNutrientDepletion.medication_id == med.medication_id,
+            DrugNutrientDepletion.nutrient_id == nutr.nutrient_id
+        ).first()
+        
+        if not existing:
+            depletion = DrugNutrientDepletion(
+                medication_id=med.medication_id,
+                nutrient_id=nutr.nutrient_id,
+                severity=severity,
+                mechanism=mechanism,
+                recommendation=recommendation,
+            )
+            db.add(depletion)
+            print(f'  Seeded: {generic_name} depletes {nutrient_name}')
+    
+    db.commit()
+    print('DrugNutrientDepletion seeding complete.')
+
 def run_seed():
     db = SessionLocal()
     try:
@@ -187,6 +298,7 @@ def run_seed():
         seed_foods(db, foods_data)
         seed_medications(db, meds_data)
         seed_conditions(db, conds_data)
+        seed_drug_nutrient_depletions(db)
         
         db.commit()
         print("Seed completed successfully.")

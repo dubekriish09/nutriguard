@@ -1,76 +1,2812 @@
 [
   {
-    "name": "Spinach",
-    "aliases": ["Palak", "Spinacia oleracea"],
-    "category": "vegetable",
-    "subcategory": "leafy_vegetable",
-    "cuisine_origin": ["pan_indian", "global"],
-    "description": "Leafy green vegetable, rich in iron, calcium, and vitamins, but high in oxalates and potassium.",
-    "is_raw": true,
-    "is_vegetarian": true,
-    "is_vegan": true,
-    "is_gluten_free": true,
-    "is_lactose_free": true,
-    "nutrients": [
-      {"name": "potassium", "amount": 558, "unit": "mg"},
-      {"name": "calcium", "amount": 99, "unit": "mg"},
-      {"name": "iron", "amount": 2.7, "unit": "mg"},
-      {"name": "oxalate", "amount": 970, "unit": "mg"},
-      {"name": "vitamin_k", "amount": 483, "unit": "mcg"}
-    ],
-    "allergens": []
-  },
-  {
-    "name": "Banana",
-    "aliases": ["Kela"],
-    "category": "fruit",
-    "cuisine_origin": ["global", "pan_indian"],
-    "description": "Common fruit, high in potassium and carbohydrates.",
-    "is_raw": true,
-    "is_vegetarian": true,
-    "is_vegan": true,
-    "is_gluten_free": true,
-    "is_lactose_free": true,
-    "nutrients": [
-      {"name": "potassium", "amount": 358, "unit": "mg"},
-      {"name": "carbohydrates", "amount": 22.8, "unit": "g"}
-    ],
-    "allergens": []
-  },
-  {
-    "name": "Whole Wheat Roti",
-    "aliases": ["Chapati", "Phulka"],
+    "name": "Wheat Roti",
+    "aliases": [],
     "category": "grain",
-    "cuisine_origin": ["north_indian", "pan_indian"],
-    "description": "Unleavened flatbread made from whole wheat flour.",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
     "is_raw": false,
     "is_vegetarian": true,
     "is_vegan": true,
+    "is_jain": false,
     "is_gluten_free": false,
     "is_lactose_free": true,
     "nutrients": [
-      {"name": "carbohydrates", "amount": 46.4, "unit": "g"},
-      {"name": "protein", "amount": 6.9, "unit": "g"},
-      {"name": "fiber", "amount": 6.8, "unit": "g"}
+      {
+        "name": "calories",
+        "amount": 104.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 3.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "sodium_mg",
+        "amount": 0.0,
+        "unit": "mg"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 100.0,
+        "unit": "mg"
+      }
     ],
-    "allergens": ["gluten"]
+    "allergens": [],
+    "glycemic_index": 62,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
   },
   {
-    "name": "Peanuts",
-    "aliases": ["Moongphali", "Groundnuts"],
-    "category": "snack",
-    "subcategory": "nuts_seeds",
-    "cuisine_origin": ["pan_indian"],
-    "description": "Legume commonly consumed as a snack or in recipes.",
-    "is_raw": true,
+    "name": "Jowar Roti",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
     "is_vegetarian": true,
     "is_vegan": true,
+    "is_jain": false,
     "is_gluten_free": true,
     "is_lactose_free": true,
     "nutrients": [
-      {"name": "protein", "amount": 25.8, "unit": "g"},
-      {"name": "fat", "amount": 49.2, "unit": "g"}
+      {
+        "name": "calories",
+        "amount": 90.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 18.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 110.0,
+        "unit": "mg"
+      }
     ],
-    "allergens": ["peanut"]
+    "allergens": [],
+    "glycemic_index": 55,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Bajra Roti",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 95.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 17.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 3.2,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 3.5,
+        "unit": "g"
+      },
+      {
+        "name": "iron_mg",
+        "amount": 1.5,
+        "unit": "mg"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 130.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 54,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Ragi Roti",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 21.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "calcium_mg",
+        "amount": 100.0,
+        "unit": "mg"
+      },
+      {
+        "name": "iron_mg",
+        "amount": 1.2,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 68,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "White Rice",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 35.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.5,
+        "unit": "g"
+      },
+      {
+        "name": "sodium_mg",
+        "amount": 1.0,
+        "unit": "mg"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 40.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 72,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Brown Rice",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 135.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 28.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 2.5,
+        "unit": "g"
+      },
+      {
+        "name": "sodium_mg",
+        "amount": 2.0,
+        "unit": "mg"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 80.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 55,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Poha",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 130.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 28.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 2.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "iron_mg",
+        "amount": 2.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 70,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Upma",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": false,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 140.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 22.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 1.5,
+        "unit": "g"
+      },
+      {
+        "name": "sodium_mg",
+        "amount": 150.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 65,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Oats",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 140.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 4.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 100.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 55,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Makka Roti",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 110.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 22.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 2.5,
+        "unit": "g"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 59,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Bread (Whole Wheat)",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": false,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 70.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 12.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "sodium_mg",
+        "amount": 120.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 69,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Idli",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 8.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 1.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.5,
+        "unit": "g"
+      },
+      {
+        "name": "sodium_mg",
+        "amount": 20.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 70,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Dosa (plain)",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.5,
+        "unit": "g"
+      },
+      {
+        "name": "sodium_mg",
+        "amount": 80.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 67,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Sabudana",
+    "aliases": [],
+    "category": "grain",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 130.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 0.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.5,
+        "unit": "g"
+      },
+      {
+        "name": "sodium_mg",
+        "amount": 2.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 97,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Toor Dal",
+    "aliases": [],
+    "category": "pulse",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 115.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 7.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 250.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "low",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Moong Dal",
+    "aliases": [],
+    "category": "pulse",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 105.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 19.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 7.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 270.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "low",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Chana Dal",
+    "aliases": [],
+    "category": "pulse",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 120.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 22.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 7.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 6.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 240.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "low",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Masoor Dal",
+    "aliases": [],
+    "category": "pulse",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 110.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 8.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 230.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "moderate",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Urad Dal",
+    "aliases": [],
+    "category": "pulse",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 115.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 7.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 260.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "moderate",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Rajma",
+    "aliases": [],
+    "category": "pulse",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 140.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 9.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 7.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 400.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "moderate",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Chana (Kabuli)",
+    "aliases": [],
+    "category": "pulse",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 160.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 27.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 9.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 8.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 300.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "low",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Kala Chana",
+    "aliases": [],
+    "category": "pulse",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 8.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 8.0,
+        "unit": "g"
+      },
+      {
+        "name": "iron_mg",
+        "amount": 3.0,
+        "unit": "mg"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 320.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "low",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Soya Chunks",
+    "aliases": [],
+    "category": "protein",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 4.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 150.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "moderate",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Tofu",
+    "aliases": [],
+    "category": "protein",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 75.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 8.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "calcium_mg",
+        "amount": 200.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "low",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Palak",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 4.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 2.5,
+        "unit": "g"
+      },
+      {
+        "name": "iron_mg",
+        "amount": 2.7,
+        "unit": "mg"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 450.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 483,
+    "nutrient_source": "USDA_FDC"
+  },
+  {
+    "name": "Methi",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 35.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 6.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 4.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "iron_mg",
+        "amount": 2.0,
+        "unit": "mg"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 300.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 310,
+    "nutrient_source": "USDA_FDC"
+  },
+  {
+    "name": "Bathua",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "iron_mg",
+        "amount": 3.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 250,
+    "nutrient_source": "estimated"
+  },
+  {
+    "name": "Amaranth Leaves",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 4.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "calcium_mg",
+        "amount": 210.0,
+        "unit": "mg"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 300.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 1140,
+    "nutrient_source": "USDA_FDC"
+  },
+  {
+    "name": "Drumstick Leaves",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 6.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 4.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "calcium_mg",
+        "amount": 250.0,
+        "unit": "mg"
+      },
+      {
+        "name": "iron_mg",
+        "amount": 3.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 141,
+    "nutrient_source": "USDA_FDC"
+  },
+  {
+    "name": "Cabbage",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 6.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 1.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 2.5,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 170.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 76,
+    "nutrient_source": "USDA_FDC"
+  },
+  {
+    "name": "Cauliflower",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 300.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 16,
+    "nutrient_source": "USDA_FDC"
+  },
+  {
+    "name": "Bhindi",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 35.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 7.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 300.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 53,
+    "nutrient_source": "USDA_FDC"
+  },
+  {
+    "name": "Brinjal",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 6.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 2.5,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 230.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 3,
+    "nutrient_source": "USDA_FDC"
+  },
+  {
+    "name": "Carrot",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 40.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 320.0,
+        "unit": "mg"
+      },
+      {
+        "name": "vitamin_a_mcg",
+        "amount": 800.0,
+        "unit": "mcg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 13,
+    "nutrient_source": "USDA_FDC"
+  },
+  {
+    "name": "Tomato",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 4.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 1.5,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 240.0,
+        "unit": "mg"
+      },
+      {
+        "name": "vitamin_c_mg",
+        "amount": 15.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 8,
+    "nutrient_source": "USDA_FDC"
+  },
+  {
+    "name": "Cucumber",
+    "aliases": [],
+    "category": "vegetable",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 150.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": 16,
+    "nutrient_source": "USDA_FDC"
+  },
+  {
+    "name": "Banana",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 105.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 27.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 422.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 51,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Apple",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 95.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 0.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 4.5,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 195.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 36,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Guava",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 68.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 14.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 2.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 5.5,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 417.0,
+        "unit": "mg"
+      },
+      {
+        "name": "vitamin_c_mg",
+        "amount": 228.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 12,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Papaya",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 43.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 11.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 0.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 1.8,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 182.0,
+        "unit": "mg"
+      },
+      {
+        "name": "vitamin_c_mg",
+        "amount": 60.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 59,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Mango",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 60.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 0.8,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 1.5,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 168.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 56,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Orange",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 62.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 3.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 237.0,
+        "unit": "mg"
+      },
+      {
+        "name": "vitamin_c_mg",
+        "amount": 70.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 43,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Watermelon",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 30.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 8.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 0.5,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.4,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 112.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 72,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Pomegranate",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 83.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 19.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 1.7,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 4.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 236.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 35,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Amla",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 44.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 10.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 4.5,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 200.0,
+        "unit": "mg"
+      },
+      {
+        "name": "vitamin_c_mg",
+        "amount": 300.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 15,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Jamun",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 60.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 15.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 2.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 55.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 25,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Chikoo",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 83.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 0.4,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 193.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 55,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Grapes",
+    "aliases": [],
+    "category": "fruit",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": true,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": true,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 69.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 18.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 0.7,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.9,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 191.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": 46,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Whole Milk",
+    "aliases": [],
+    "category": "dairy",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": false,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": false,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 150.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 12.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 8.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "calcium_mg",
+        "amount": 300.0,
+        "unit": "mg"
+      },
+      {
+        "name": "saturated_fat_g",
+        "amount": 4.5,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 320.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Curd",
+    "aliases": [],
+    "category": "dairy",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": true,
+    "is_vegan": false,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": false,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 90.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 7.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 5.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "calcium_mg",
+        "amount": 150.0,
+        "unit": "mg"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 200.0,
+        "unit": "mg"
+      },
+      {
+        "name": "vitamin_b12",
+        "amount": 0.5,
+        "unit": "g"
+      }
+    ],
+    "allergens": [
+      "dairy"
+    ],
+    "glycemic_index": null,
+    "purine_level": null,
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Egg",
+    "aliases": [],
+    "category": "egg",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": false,
+    "is_vegan": false,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": false,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 70.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 0.5,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 6.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "cholesterol_mg",
+        "amount": 186.0,
+        "unit": "mg"
+      },
+      {
+        "name": "vitamin_b12",
+        "amount": 0.4,
+        "unit": "g"
+      }
+    ],
+    "allergens": [
+      "egg"
+    ],
+    "glycemic_index": null,
+    "purine_level": "low",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Chicken Breast",
+    "aliases": [],
+    "category": "protein",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": false,
+    "is_vegan": false,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": false,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 165.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 31.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "saturated_fat_g",
+        "amount": 1.0,
+        "unit": "g"
+      },
+      {
+        "name": "potassium_mg",
+        "amount": 256.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "moderate",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Fish Rohu",
+    "aliases": [],
+    "category": "protein",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": false,
+    "is_vegan": false,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": false,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 110.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 16.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "omega_3_mg",
+        "amount": 300.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [
+      "fish"
+    ],
+    "glycemic_index": null,
+    "purine_level": "moderate",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Fish Katla",
+    "aliases": [],
+    "category": "protein",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": false,
+    "is_vegan": false,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": false,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 115.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 17.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "omega_3_mg",
+        "amount": 350.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [
+      "fish"
+    ],
+    "glycemic_index": null,
+    "purine_level": "moderate",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Mutton",
+    "aliases": [],
+    "category": "protein",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": false,
+    "is_vegan": false,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": false,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 250.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 25.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "saturated_fat_g",
+        "amount": 6.0,
+        "unit": "g"
+      }
+    ],
+    "allergens": [],
+    "glycemic_index": null,
+    "purine_level": "high",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
+  },
+  {
+    "name": "Prawns",
+    "aliases": [],
+    "category": "protein",
+    "subcategory": null,
+    "cuisine_origin": [
+      "Indian"
+    ],
+    "description": "",
+    "is_raw": false,
+    "is_vegetarian": false,
+    "is_vegan": false,
+    "is_jain": false,
+    "is_gluten_free": true,
+    "is_lactose_free": false,
+    "nutrients": [
+      {
+        "name": "calories",
+        "amount": 100.0,
+        "unit": "g"
+      },
+      {
+        "name": "carbs_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "protein_g",
+        "amount": 20.0,
+        "unit": "g"
+      },
+      {
+        "name": "fiber_g",
+        "amount": 0.0,
+        "unit": "g"
+      },
+      {
+        "name": "cholesterol_mg",
+        "amount": 190.0,
+        "unit": "mg"
+      },
+      {
+        "name": "sodium_mg",
+        "amount": 150.0,
+        "unit": "mg"
+      }
+    ],
+    "allergens": [
+      "shellfish"
+    ],
+    "glycemic_index": null,
+    "purine_level": "high",
+    "vitamin_k_mcg": null,
+    "nutrient_source": "ICMR_NIN"
   }
 ]
