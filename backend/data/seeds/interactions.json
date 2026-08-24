@@ -1,0 +1,79 @@
+[
+  {
+    "medication_generic_name": "warfarin",
+    "interaction_type": "nutrient",
+    "food_component": "vitamin_k",
+    "severity": "major",
+    "mechanism": "Vitamin K is a cofactor for clotting factor synthesis. High intake competes with warfarin's anticoagulant mechanism.",
+    "effect": "Reduces anticoagulant effectiveness. Sudden increases in vitamin K intake can cause INR to drop.",
+    "recommendation": "Maintain consistent vitamin K intake. Do not suddenly increase or eliminate high vitamin K foods. Discuss any dietary changes with your doctor.",
+    "timing_window": null,
+    "evidence_level": "A"
+  },
+  {
+    "medication_generic_name": "levothyroxine",
+    "interaction_type": "nutrient",
+    "food_component": "calcium",
+    "severity": "moderate",
+    "mechanism": "Calcium binds levothyroxine in the GI tract, reducing absorption.",
+    "effect": "Reduced levothyroxine bioavailability, potentially leading to inadequate thyroid hormone replacement.",
+    "recommendation": "Take levothyroxine 30-60 minutes before any calcium-containing food or supplement.",
+    "timing_window": "avoid within 4 hours",
+    "evidence_level": "A"
+  },
+  {
+    "medication_generic_name": "levothyroxine",
+    "interaction_type": "nutrient",
+    "food_component": "iron",
+    "severity": "moderate",
+    "mechanism": "Iron chelates levothyroxine in the GI tract, reducing absorption.",
+    "effect": "Reduced levothyroxine bioavailability.",
+    "recommendation": "Separate levothyroxine from iron-rich foods or iron supplements by at least 2-4 hours.",
+    "timing_window": "avoid within 4 hours",
+    "evidence_level": "A"
+  },
+  {
+    "medication_generic_name": "ferrous_sulfate",
+    "interaction_type": "nutrient",
+    "food_component": "calcium",
+    "severity": "moderate",
+    "mechanism": "Calcium competes with iron for intestinal absorption via shared divalent metal transporter.",
+    "effect": "Reduced iron absorption when taken together.",
+    "recommendation": "Separate iron and calcium supplements or calcium-rich foods by at least 2 hours.",
+    "timing_window": "avoid within 2 hours",
+    "evidence_level": "A"
+  },
+  {
+    "medication_generic_name": "ferrous_sulfate",
+    "interaction_type": "food_component",
+    "food_component": "tannins",
+    "severity": "moderate",
+    "mechanism": "Tannins in tea and coffee chelate iron and reduce absorption.",
+    "effect": "Significantly reduced non-heme iron absorption.",
+    "recommendation": "Avoid tea or coffee within 1 hour before or after taking iron supplements or eating iron-rich foods.",
+    "timing_window": "avoid within 1 hour",
+    "evidence_level": "A"
+  },
+  {
+    "medication_generic_name": "metformin",
+    "interaction_type": "food",
+    "food_component": "alcohol",
+    "severity": "major",
+    "mechanism": "Alcohol increases risk of lactic acidosis with metformin and can cause hypoglycemia.",
+    "effect": "Risk of lactic acidosis and hypoglycemia.",
+    "recommendation": "Avoid or strictly limit alcohol consumption while taking metformin.",
+    "timing_window": null,
+    "evidence_level": "A"
+  },
+  {
+    "medication_generic_name": "atorvastatin",
+    "interaction_type": "food",
+    "food_component": "grapefruit",
+    "severity": "major",
+    "mechanism": "Grapefruit furanocoumarins inhibit CYP3A4, significantly increasing statin plasma levels.",
+    "effect": "Markedly increased statin levels, raising risk of myopathy and rhabdomyolysis.",
+    "recommendation": "Avoid grapefruit and grapefruit juice while taking atorvastatin.",
+    "timing_window": null,
+    "evidence_level": "A"
+  }
+]

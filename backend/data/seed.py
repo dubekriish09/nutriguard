@@ -297,6 +297,37 @@ def seed_drug_nutrient_depletions(db):
     db.commit()
     print('DrugNutrientDepletion seeding complete.')
 
+def seed_drug_food_interactions(db: Session):
+    with open('data/seeds/interactions.json') as f:
+        interactions = json.load(f)
+    
+    for item in interactions:
+        med = db.query(Medication).filter(
+            Medication.generic_name == item['medication_generic_name']
+        ).first()
+        if not med:
+            print(f"WARNING: medication not found: {item['medication_generic_name']}")
+            continue
+        
+        existing = db.query(DrugFoodInteraction).filter(
+            DrugFoodInteraction.medication_id == med.medication_id,
+            DrugFoodInteraction.food_component == item['food_component']
+        ).first()
+        
+        if not existing:
+            db.add(DrugFoodInteraction(
+                medication_id=med.medication_id,
+                interaction_type=item['interaction_type'],
+                food_component=item['food_component'],
+                severity=item['severity'],
+                mechanism=item['mechanism'],
+                effect=item['effect'],
+                recommendation=item['recommendation'],
+                timing_window=item.get('timing_window'),
+                evidence_level=item.get('evidence_level')
+            ))
+    print(f'DrugFoodInteraction seeding complete.')
+
 def run_seed():
     db = SessionLocal()
     try:
@@ -313,6 +344,7 @@ def run_seed():
         seed_medications(db, meds_data)
         seed_conditions(db, conds_data)
         seed_drug_nutrient_depletions(db)
+        seed_drug_food_interactions(db)
         
         db.commit()
         print("Seed completed successfully.")
