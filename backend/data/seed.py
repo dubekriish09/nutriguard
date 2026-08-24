@@ -43,6 +43,19 @@ def seed_foods(db, foods_data):
         # Check if food exists (idempotency)
         existing = db.query(Food).filter_by(name=item['name']).first()
         if existing:
+            # Seed missing allergens even if food exists
+            for alg_name in item.get('allergens', []):
+                alg_name_lower = alg_name.lower()
+                alg = db.query(Allergen).filter_by(name=alg_name_lower).first()
+                if not alg:
+                    alg = Allergen(name=alg_name_lower)
+                    db.add(alg)
+                    db.flush()
+                
+                from models.food import FoodAllergen
+                existing_fa = db.query(FoodAllergen).filter_by(food_id=existing.food_id, allergen_id=alg.allergen_id).first()
+                if not existing_fa:
+                    db.add(FoodAllergen(food_id=existing.food_id, allergen_id=alg.allergen_id))
             continue
             
         food = Food(
@@ -85,9 +98,10 @@ def seed_foods(db, foods_data):
             db.add(fn)
             
         for alg_name in item.get('allergens', []):
-            alg = db.query(Allergen).filter_by(name=alg_name).first()
+            alg_name_lower = alg_name.lower()
+            alg = db.query(Allergen).filter_by(name=alg_name_lower).first()
             if not alg:
-                alg = Allergen(name=alg_name)
+                alg = Allergen(name=alg_name_lower)
                 db.add(alg)
                 db.flush()
             

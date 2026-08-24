@@ -10,7 +10,7 @@ from engines.targets_engine import calculate_daily_targets
 from engines.meal_engine import build_approved_pool, compose_daily_plan
 from engines.timing_engine import assign_medication_timing
 from engines.gap_engine import check_nutrient_gaps
-from api.schemas.engine_schemas import UserProfileSchema, ConditionSchema, MedicationSchema, DietaryPattern
+from api.schemas.engine_schemas import UserProfileSchema, ConditionSchema, MedicationSchema, DietaryPattern, DepletionSchema
 from api.schemas.meal_schemas import DayPlanResponse
 
 class RecommendationService:
@@ -151,7 +151,14 @@ class RecommendationService:
         timing = assign_medication_timing(user_context.medications, c_plan, has_ckd=has_ckd)
         
         gaps = check_nutrient_gaps(c_plan, targets, pool)
-        gaps.depletion_flags = [f.model_dump() if hasattr(f, 'model_dump') else f.dict() if hasattr(f, 'dict') else f for f in targets.depletion_flags]
+        gaps.depletion_flags = [
+            DepletionSchema(
+                nutrient=f.nutrient,
+                severity='informational',
+                recommendation=f.note
+            )
+            for f in targets.depletion_flags
+        ]
         
         meals_dict = {}
         for m in c_plan.meals:

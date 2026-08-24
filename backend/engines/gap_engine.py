@@ -12,6 +12,8 @@ class GapSuggestion(BaseModel):
     suggested_foods: List[str]
     note: str
 
+from api.schemas.engine_schemas import DepletionSchema
+
 class NutrientGapReport(BaseModel):
     met: List[str] = Field(default_factory=list)
     borderline: List[str] = Field(default_factory=list)
@@ -19,7 +21,7 @@ class NutrientGapReport(BaseModel):
     surplus: List[str] = Field(default_factory=list)
     suggestions: List[GapSuggestion] = Field(default_factory=list)
     medication_depletion_notes: List[str] = []
-    depletion_flags: List[dict] = []
+    depletion_flags: List[DepletionSchema] = []
 
 def check_nutrient_gaps(
     day_plan: DailyMealPlan,

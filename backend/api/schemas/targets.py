@@ -44,5 +44,5 @@ class NutrientTargetsSchema(BaseModel):
     phosphorus_limit_mg: Optional[float] = None
     potassium_limit_mg: Optional[float] = None
     
-    depletion_flags: List[Dict[str, Any]] = Field(default_factory=list)
+    depletion_flags: List[DepletionFlagSchema] = Field(default_factory=list)
     calculation_notes: List[str] = Field(default_factory=list)
